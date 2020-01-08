@@ -364,7 +364,7 @@ footer a
 /* ---------------------------------------------------------------------- CONTENT */
 #content{
 	display: none;
-	background: red;
+	background: #1f1f23;
 	position:fixed;
 	top: 0px;
 	left: 0px;

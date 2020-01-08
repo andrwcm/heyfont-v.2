@@ -256,13 +256,13 @@ ul.aligment li.button-align.active-align#left{
 
 
 ul.aligment li.button-align#center{
-  background: url('../assets/Center_align.svg') no-repeat;
+  background: url('../assets/Center_Align.svg') no-repeat;
 	background-position: center;
 }
 
 
 ul.aligment li.button-align.active-align#center{
-  background: url('../assets/Center_align_active.svg') no-repeat;
+  background: url('../assets/Center_Align_active.svg') no-repeat;
   background-position: center;
 }
 

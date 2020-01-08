@@ -3,18 +3,21 @@
 /* custom styles for the typeahead */
 
 .typeahead, .tt-query, .tt-hint {
-    background-color: transparent ;
-    display: block ;
-    border: none ;
-    outline: none ;
-    font-size: 22px ;
-    color: #414933 ;
-    right: 0px;
-    border-radius:5px ;
-    padding-left: 20px ;
-    position: absolute ;
-    height: 67px ;
-    width: 519px;
+    display: block;
+    outline: none;
+    background: #0E0E0F;
+    border: 1px solid var(--light-gray);
+    border-radius: 2px;
+    padding-left: 23px;
+    font-family: Muli Light;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 30px;
+    color: #7F7F7F;
+    width: 100%;
+    height: 100%;
+    transition-duration: .5s;
 
 }
 

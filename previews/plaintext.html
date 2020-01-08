@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+	  <meta name="viewport" content="initial-scale=1.0">
+	  <meta name="description" content="The best partner for designers and for your workflow. Preview and test your favorites fonts from google fonts and improve your process">
+	  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	  <meta property="og:title" content="Heyfont - The easy way to preview google fonts">
+	  <meta property="og:description" content="The best partner for designers and for your workflow. Preview and test your favorites fonts from google fonts and improve your process">
+	  <meta property="og:url" content="https://heyfont.design">
+	  <meta name="fragment" content="!">
+	  <meta name="author" content="@heyfont" />
+	<meta name="keywords" content="google fonts, google, preview, fonts" />
+	  <meta name="google-site-verification" content="yc22LRxfiUCYG_kNo29HvtyXNkUy_42_0XtouaL_6WA">
+	  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	  <meta name="mobile-web-app-capable" content="yes">
+	  <link rel="icon" href="heyfont_favico.svg"/>
+
+	  <title>Heyfont - Preview google font</title>
+
+
+	  <link rel="stylesheet" href="css/standardize.css">
+
+	  <script type="text/javascript" src="prefixfree.min.js"></script>
+	  <script type="text/javascript" src="../js/plaintext.js"></script>
+	  <script type="text/javascript" src="../js/jquery-min.js"></script>
+
+	  <link rel="stylesheet" type="text/css" id="editable" href="../css/plaintext.css" media="screen" />
+
+	</head>
+
+	<body class="body page-index clearfix">
+
+		<div class="metrics">
+
+			
+			
+			<section id="rule">
+				<ul class="Text-style">
+					<li class="button-normal active-style" id="normal"></li>
+					<li class="button-normal" id="uppercase"></li>
+					<li class="button-normal" id="lowercase"></li>
+				</ul>
+
+				<div class="pixels">
+					<p class="range">
+					    <output for="fader" id="fontsize">0</output>
+					    <input type="range" min="0" max="100" value="25" step="5" id="fader">
+					    <span class="sp1" data-min="a-" id="decreaseFont" onclick="changeFontSize(this)"></span>
+					    <span class="sp2" data-max="A+" id="increaseFont" onclick="changeFontSize(this)"></span>
+					</p>
+				</div>
+				
+				
+
+				<ul class="align">
+					<li class="button-align" id="left"></li>
+					<li class="button-align" id="center"></li>
+					<li class="button-align" id="right"></li>
+				</ul>
+			</section>
+
+			
+
+			<div id="container-preview">
+				<section class="textMetrics">
+
+					<div id="textchange" class="change1">
+							<div contenteditable="true" style="width;95%; height:auto; padding-bottom:10px; padding-left:10px; padding-right:10px;">
+
+							<br>
+							<br>
+
+							Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
+							<br>
+							<br>
+							123456789
+							<br>
+							<br>
+							<br>
+							<span class="divider"></span>
+
+							<br>
+							<br>
+							<p><strong>This is an Amazing Title People!</strong></p>
+							<p><br></p>
+							Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Maecenas faucibus mollis interdum.
+							<br>
+							<br>
+							Cras justo odio, dapibus ac facilisis in, egestas eget quam. 
+							<br>
+							<br>
+							Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Maecenas faucibus mollis interdum. 
+							<br>
+							<br>
+							Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							<br>
+							<br>
+							Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+
+
+
+							</div>
+
+					</div>
+
+				</section>
+
+			</div>
+
+			<script type="text/javascript">
+				var value = $('#valor').val(16);
+
+				 $('#valor').on('change', function () {
+				    var v = $(this).val();
+				    $('.change1').css('font-size', v + 'px')
+				    $('#pixel').html(v);
+				});
+			</script>
+
+
+		</div>
+
+	</body>
+</html>

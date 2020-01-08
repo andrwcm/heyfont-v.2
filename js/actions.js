@@ -50,12 +50,11 @@ $(function() {
 
 //acciones al dar click en el botón GO!
  $(document).ready(function() {
-    $('.btn').click(function(){
+    $('.SearchIcon').click(function(){
         $('body').css('overflow','hidden');
-        $("#preloader , #status").fadeIn(0).delay(2000).fadeOut("slow");
-        $('#content').delay(2200).slideDown ("slow");
-        $('#tools').delay(2200).fadeIn("slow");
-        $('#userInput').delay(2200).addClass('small-input');
+        $('#content').delay(500).slideDown ("slow");
+        $('#tools').delay(500).fadeIn("slow");
+        $('#userInput').delay(500).addClass('small-input');
         $('.tt-dropdown-menu').delay(2200).addClass('top');
         $('.tt-hint').delay(2200).addClass('small-input');
         $('#buttonFont').delay(2200).addClass('small-button');

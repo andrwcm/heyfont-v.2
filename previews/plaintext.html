@@ -15,7 +15,11 @@
 	  <meta name="google-site-verification" content="yc22LRxfiUCYG_kNo29HvtyXNkUy_42_0XtouaL_6WA">
 	  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 	  <meta name="mobile-web-app-capable" content="yes">
-	  <link rel="icon" href="heyfont_favico.svg"/>
+
+		<!-- <link rel="stylesheet" href="../css/plaintext.css"/>
+
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/actions.js"></script> -->
 
 	  <title>Heyfont - Preview google font</title>
 
@@ -28,41 +32,43 @@
 
 
 			<section id="rule">
+
 				<ul class="Text-style">
 					<li class="button-normal active-style" id="normal"></li>
 					<li class="button-normal" id="uppercase"></li>
 					<li class="button-normal" id="lowercase"></li>
 				</ul>
 
-				<div class="pixels">
-					<p class="range">
-					    <output for="fader" id="fontsize">0</output>
-					    <input type="range" min="0" max="100" value="25" step="5" id="fader">
-					    <span class="sp1" data-min="a-" id="decreaseFont" onclick="changeFontSize(this)"></span>
-					    <span class="sp2" data-max="A+" id="increaseFont" onclick="changeFontSize(this)"></span>
-					</p>
+				<ul class="sizes">
+					<div class="wrapper">
+						<div class="progress mediumprogress"></div>
+						<li class="button-size active-size" id="Small"><p>S</p></li>
+						<li class="button-size active-size" id="Medium"><p>M</p></li>
+						<li class="button-size" id="Large"><p>L</p></li>
+						<li class="button-size" id="XXL"><p>XXL</p></li>
+					</div>
+				</ul>
+
+				<ul class="aligment">
+						<li class="button-align active-align" id="left"></li>
+						<li class="button-align" id="center"></li>
+						<li class="button-align" id="right"></li>
+				</ul>
+
+				<div class="background_button">
+					Background color
+					<div class="color_background"></div>
 				</div>
 
-
-
-				<ul class="align">
-					<li class="button-align" id="left"></li>
-					<li class="button-align" id="center"></li>
-					<li class="button-align" id="right"></li>
-				</ul>
 			</section>
 
 
 
-			<div id="container-preview">
+			<div id="container-preview" >
 				<section class="textMetrics">
 
-					<div id="textchange" class="change1">
+					<div id="textchange" class="change1 normalText mediumSize ">
 							<div contenteditable="true" style="width;95%; height:auto; padding-bottom:10px; padding-left:10px; padding-right:10px;">
-
-							<br>
-							<br>
-
 							Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
 							<br>
 							<br>
@@ -99,18 +105,6 @@
 				</section>
 
 			</div>
-
-			<script type="text/javascript">
-				var value = $('#valor').val(16);
-
-				 $('#valor').on('change', function () {
-				    var v = $(this).val();
-				    $('.change1').css('font-size', v + 'px')
-				    $('#pixel').html(v);
-				});
-			</script>
-
-
 		</div>
 
 	</body>

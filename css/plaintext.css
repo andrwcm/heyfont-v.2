@@ -11,6 +11,9 @@
 	margin: 0px;
 	text-align: center;
 	height: 1000px;
+  padding-bottom: 150px;
+  overflow-y: scroll;
+  box-sizing: border-box;
 }
 
 
@@ -26,17 +29,80 @@
   overflow: hidden;
   position: relative;
   top: 50px;
+  box-sizing: border-box;
+  transition: .4s;
 }
 
 #container-preview #textchange{
   width: 90%;
   margin: auto;
+  margin-bottom: 30px;
   text-align: left;
-  background:white;
+  background:transparent;
   border-radius: 6px;
   font-size: 16px;
+  color: black;
   display: block;
   padding: 10px;
+  padding-top: 40px;
+  height: auto;
+  box-sizing: border-box;
+  outline: none !important;
+  transition: .4s;
+}
+
+/* --------- transform */
+#container-preview #textchange.normalText{
+  text-transform: none;
+}
+
+#container-preview #textchange.uppercaseText{
+  text-transform: uppercase;
+}
+
+#container-preview #textchange.lowercaseText{
+  text-transform: lowercase;
+}
+
+/* --------- font size */
+
+#container-preview #textchange.smallSize{
+    font-size: 11px;
+}
+#container-preview #textchange.mediumSize{
+    font-size: 15px;
+}
+#container-preview #textchange.largeSize{
+    font-size: 30px;
+}
+#container-preview #textchange.xxlSize{
+    font-size: 45px;
+}
+
+/* --------- text align */
+
+#container-preview #textchange.leftAligment{
+    text-align: left;
+}
+
+#container-preview #textchange.centerAligment{
+    text-align: center;
+}
+
+#container-preview #textchange.rightAligment{
+    text-align: right;
+}
+
+
+/* --------- background */
+
+.darkBackground{
+  background: #0F1116 !important;
+  color: white !important;
+}
+
+#container-preview #textchange.whiteText{
+  color: white !important;
 }
 
 #container-preview #textchange strong{
@@ -45,15 +111,16 @@
 
 [contenteditable="true"]:hover{
 	padding: 0px;
-	border: dashed 1px #7A8FFF;
-  	box-sizing: border-box;
+
+  box-sizing: border-box;
+  outline: none !important;
 }
 
 span.divider{
 	width: 150%;
 	height: 1px;
 	margin: auto;
-	background:#D3D3D3;
+	background:rgba(0,0,0,.2);
 	display:block;
 	float: left;
 	left: 0px;
@@ -66,26 +133,32 @@ span.divider{
 
 section#rule{
 	width: 1153px;
-  height: 200px;
+  height: 100px;
   padding-bottom: 20px;
   margin: auto;
   text-align: left;
   background:white;
   border-radius: 6px 6px 0px 0px ;
-  display: block;
+  display: flex;
   overflow: hidden;
   top: 49px;
   position: relative;
   padding-left: 58px;
   padding-top: 27px;
+  padding-right: 58px;
   box-sizing: border-box;
 }
 
+/* ------------------------------ text styles */
 
 ul.Text-style{
-	margin:0px;
+  width: 145px;
+  display: inline-block;
+	margin-top:7px;
 	padding: 0px;
 	left: 0px;
+  height:30px;
+  margin-right: 20px;
 }
 
 ul.Text-style li.button-normal{
@@ -97,6 +170,7 @@ ul.Text-style li.button-normal{
 	background-color: transparent;
 	cursor: pointer;
 	transition: .5s;
+  margin-right: 5px;
 }
 
 ul.Text-style li.button-normal.active-style{
@@ -119,141 +193,201 @@ ul.Text-style li.button-normal#uppercase{
 	background-position: center;
 }
 
+ul.Text-style li.button-normal.active-style#uppercase{
+	background: url('../assets/Uppercase_white.svg') no-repeat;
+	background-position: center;
+}
+
+
 ul.Text-style li.button-normal#lowercase{
 	background: url('../assets/Lowercase_black.svg') no-repeat;
 	background-color: transparent;
 	background-position: center;
 }
 
-/* my range 
-.caja{ *width: 600px;}
-______________*/
-p.range {
-  padding: 20px;
-  width: 100%;
-  position: relative;
-  top:25%;
-}
-p.range output {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 20px;
-  text-align: center;
-  font-weight: bold;
-}
-/*p.range span {
-  width: 100%;
-  display: block;
-  height: 20px;
-  position: relative;
-}
-p.range span:before {content: attr(data-min);}
-p.range span:after {
-  position: absolute;
-  right: 0;
-  content: attr(data-max);
-}*/
-p.range span .sp1, p.range span .sp2 {
-  display: block;
-  width: 100%;
-  height: 20px;
-  position: relative;
-}
-.sp1, .sp2 {cursor: pointer;}
-p.range span.sp1:before { content: attr(data-min); }
-p.range span.sp2:after {
-  position: absolute;
-  right: 20px;
-  content: attr(data-max);
+
+ul.Text-style li.button-normal.active-style#lowercase{
+  background: url('../assets/Lowercase_white.svg') no-repeat;
+	background-position: center;
 }
 
-input[type=range] {
-  -webkit-appearance: none;
-  height: 35px; /* color: punto ampliado */
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
-  cursor: pointer;
-}
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  box-sizing: content-box;
-  border: 12px solid #3fa2bf; /* color: punto ampliado */
-  height: 8px;
-  width: 8px;
-  border-radius: 50%;
-  background-color: black; /* color: puntito */
-  cursor: ew-resize;
-  margin-top: -14px;
-  opacity: .7;
+
+
+
+
+
+/* ------------------------------ text alignment */
+
+ul.aligment{
+  display: block;
+  padding: 0px !important;
+  width: 150px;
+  position: relative;
+  margin-left: 20px;
+  top: -5px;
 }
 
-input[type=range]::-moz-range-thumb {
-  border: 12px solid black; /* color: punto ampliado */
-  height: 8px;
-  width: 8px;
-  border-radius: 18px;
-  background-color: #3fa2bf; /* color: puntito */
-  cursor: ew-resize;
-  margin-top: -14px;
-  opacity: .7;
-}
-    
-input[type=range]::-ms-thumb {
+ul.aligment li.button-align{
+  margin: 0px;
+  list-style: none;
   display: inline-block;
-  border: 12px solid #a6d8ef;
-  height: 8px;
-  width: 8px;
-  border-radius: 18px;
-  background-color: #5082e0;
-  cursor: ew-resize;
-  margin-top: 5px;
+  width: 31%;
+  height: 30px;
+  cursor: pointer;
+  transition: .3s;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
-  height: 3px;
-  border-color: transparent;
-  color: transparent;
-  background-color: #333333; 
-  /* color: deslizador chrome o webkit */
-}
-/*input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg,#3fa2bf 50%,#cccccc 26%); }*/
-input[type=range]::-moz-range-track {
-  height: 3px;
-  background-color: #cccccc;  
-}
-input[type=range]::-moz-range-progress {
-  background-color: #3fa2bf; /* color: deslizador mozilla */
-}
-input[type=range]:focus {outline: none;}
-input[type=range]::-ms-track {
-    height: 3px;
-    cursor: pointer;
-    border-color: transparent;
-    color: transparent;
-    background-color: transparent;
-}
-input[type=range]::-ms-fill-lower {background-color: #5082e0;}
-input[type=range]::-ms-tooltip {display: none;}
-/* fin my range ________________________________*/
-
-.pixels{
-	width: 130px;
-	height: auto;
-	float: left;
-	display: inline-block;
+ul.aligment li.button-align:last-child{
+  position: relative;
+  right: -3px;
 }
 
 
-section#rule .pixels{
-	color: gray;
-	margin: 10px 0px 40px 0px;
-	font-weight: 700;
-	font-size: 14px;
-	display: inline-block;
-	float: left;
+ul.aligment li.button-align#left{
+  background: url('../assets/Left_align.svg') no-repeat;
+	background-position: left;
 }
 
 
+ul.aligment li.button-align.active-align#left{
+  background: url('../assets/Left_align_active.svg') no-repeat ;
+  background-position: left;
+}
+
+
+ul.aligment li.button-align#center{
+  background: url('../assets/Center_align.svg') no-repeat;
+	background-position: center;
+}
+
+
+ul.aligment li.button-align.active-align#center{
+  background: url('../assets/Center_align_active.svg') no-repeat;
+  background-position: center;
+}
+
+ul.aligment li.button-align#right{
+  background: url('../assets/Rigth_Align.svg') no-repeat;
+	background-position: right;
+}
+
+
+ul.aligment li.button-align.active-align#right{
+  background: url('../assets/Rigth_Align_active.svg') no-repeat;
+	background-position: right;
+}
+
+
+
+/* ------------------------------ text size */
+
+ul.sizes{
+  width: 250px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 20px;
+	margin-top: 5px;
+  position: relative;
+}
+
+ul.sizes .wrapper{
+  width: 85% !important;
+  height: 2px;
+  margin: 23px 0px 0px 10px;
+  background: #EBEBEB;
+  text-align: left;
+  display: inline-block;
+  padding: 0px;
+  position: relative;
+}
+
+ul.sizes .wrapper .progress{
+  display: block;
+  height: 2px;
+  width: 1%;
+  position: absolute;
+  float: left;
+  background: #7A8FFF;
+  transition: .3s;
+}
+
+ul.sizes .wrapper .progress.mediumprogress{
+  width: 34%;
+}
+
+ul.sizes .wrapper .progress.largeprogress{
+  width: 65%;
+}
+
+ul.sizes .wrapper .progress.xxlprogress{
+  width: 98%;
+}
+
+ul.sizes li.button-size{
+  width: 15px;
+  cursor: pointer;
+  height: 15px;
+  border-radius: 50%;
+  display:inline-block;
+  margin-right: 22%;
+  margin-top: -7px;
+  position: relative;
+  font-size: 13px;
+  font-family: 'Asap', sans-serif;
+  text-align: center !important;
+  background: #EBEBEB;
+  transition: .3s;
+}
+
+ul.sizes li.button-size.active-size{
+  background: #7A8FFF;
+}
+
+ul.sizes .wrapper li.button-size:last-child{
+  margin-right:-1px !important;
+  position: relative;
+  right: -1px;
+}
+
+ul.sizes li p{
+  position: relative;
+  top: -35px;
+}
+
+/* ------------------------------ background color */
+
+
+div.background_button{
+  cursor: pointer;
+  font-family: 'Muli', sans-serif;
+  margin-left: 30px;
+  display: inline-block;
+  width: 120px;
+  height: 30px;
+  font-size: 13px;
+  width: 190px;
+  text-transform: uppercase;
+  padding-top: 12px;
+  margin-top: 6px;
+  float: right;
+  position: absolute;
+  right: 46px;
+}
+
+div.background_button .color_background{
+  width: 35px;
+  height: 35px;
+  float: right;
+  position: absolute;
+  background: white;
+  right: 0px;
+  top: 1px;
+  border-radius: 50%;
+  border:  2px solid rgba(0, 0, 0, 0.2);
+  transition: .4s;
+}
+
+
+div.background_button .color_background.dark{
+  background: #0F1116;
+}

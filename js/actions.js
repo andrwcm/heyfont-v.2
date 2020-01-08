@@ -61,7 +61,6 @@ $(function() {
     });
 });
 
-
 //acciones al dar click en los botones de preview
 $(document).ready(function() {
   $('ul#tool-options li a').click(function(){
@@ -73,55 +72,6 @@ $(document).ready(function() {
   });
 });
 
-
-//acciones feedback y menu
-$(document).ready(function() {
-    $('#give').click(function(){
-        $("#overlayForm").slideDown(300);
-    });
-
-    $('.close').click(function(){
-        $('#overlayForm').slideUp(300);
-    });
-
-    $('.heyfont').click(function(){
-        $('#overlayTools').addClass('overlayToolsVisible');
-        $('ul#tool-options').delay(1200).addClass('tool-optionsVisible');
-    });
-
-    $('#overlayTools').click(function(){
-        $('#overlayTools').removeClass('overlayToolsVisible');
-        $('ul#tool-options').removeClass('tool-optionsVisible');
-    });
-
-    //acciones botones opciones preview
-
-    $('ul#tool-options li a#brandbtn').click(function(){
-        $('.heyfont').removeClass('webActive');
-        $('.heyfont').removeClass('metricActive');
-        $('.heyfont').addClass('brandActive');
-    });
-
-    $('ul#tool-options li a#WebBtn').click(function(){
-        $('.heyfont').removeClass('metricActive');
-        $('.heyfont').removeClass('brandActive');
-        $('.heyfont').addClass('webActive');
-    });
-
-    $('ul#tool-options li a#MetricBtn').click(function(){
-        $('.heyfont').removeClass('webActive');
-        $('.heyfont').removeClass('brandActive ');
-        $('.heyfont').addClass('metricActive');
-    });
-
-    $('.primaryButton').click(function(){
-        $('.termsOverlay').slideDown(320);
-    });
-
-    $('.termsOverlay').click(function(){
-        $(this).slideUp(320);
-    });
-});
 
 
 //acciones precarga
@@ -155,4 +105,138 @@ $(document).keypress(function(event) {
     if (keycode == '13') {
         $('.btn').click();
     }
+});
+
+
+
+//acciones plain text previews
+
+
+$(document).ready(function() {
+    $('#normal').click(function(){
+    $('#normal').addClass('active-style');
+    $('#textchange').addClass('normalText');
+    $('#textchange').removeClass('uppercaseText');
+    $('#textchange').removeClass('lowercaseText');
+    $('#uppercase, #lowercase').removeClass('active-style');
+   });
+});
+
+$(document).ready(function() {
+    $('#uppercase').click(function(){
+    $('#uppercase').addClass('active-style');
+    $('#textchange').addClass('uppercaseText');
+    $('#textchange').removeClass('normalText');
+    $('#textchange').removeClass('lowercaseText');
+    $('#normal, #lowercase').removeClass('active-style');
+   });
+});
+$(document).ready(function() {
+    $('#lowercase').click(function(){
+    $('#lowercase').addClass('active-style');
+    $('#textchange').addClass('lowercaseText');
+    $('#textchange').removeClass('normalText');
+    $('#textchange').removeClass('uppercaseText');
+    $('#uppercase, #normal').removeClass('active-style');
+   });
+});
+
+
+
+$(document).ready(function() {
+    $('#Medium').click(function(){
+    $('#Medium').addClass('active-size');
+    $('#textchange').addClass('mediumSize');
+    $('#textchange').removeClass('smallSize');
+    $('#textchange').removeClass('largeSize');
+    $('#textchange').removeClass('xxlSize');
+    $('ul.sizes .wrapper .progress').addClass('mediumprogress');
+    $('ul.sizes .wrapper .progress').removeClass('largeprogress');
+    $('ul.sizes .wrapper .progress').removeClass('xxlprogress');
+    $('ul.sizes li.button-size#Large').removeClass('active-size');
+    $('ul.sizes li.button-size#XXL').removeClass('active-size');
+   });
+});
+$(document).ready(function() {
+    $('#Large').click(function(){
+    $('#Large').addClass('active-size');
+    $('#Medium').addClass('active-size');
+    $('#textchange').addClass('largeSize');
+    $('#textchange').removeClass('smallSize');
+    $('#textchange').removeClass('mediumSize');
+    $('#textchange').removeClass('xxlSize');
+    $('ul.sizes .wrapper .progress').addClass('largeprogress');
+    $('ul.sizes .wrapper .progress').removeClass('mediumprogress');
+    $('ul.sizes .wrapper .progress').removeClass('xxlprogress');
+    $('ul.sizes li.button-size#XXL').removeClass('active-size');
+   });
+});
+$(document).ready(function() {
+    $('#XXL').click(function(){
+    $('#XXL').addClass('active-size');
+    $('#Large').addClass('active-size');
+    $('#Medium').addClass('active-size');
+    $('#textchange').addClass('xxlSize');
+    $('#textchange').removeClass('smallSize');
+    $('#textchange').removeClass('mediumSize');
+    $('#textchange').removeClass('largeSize');
+    $('ul.sizes .wrapper .progress').addClass('xxlprogress');
+    $('ul.sizes .wrapper .progress').addClass('largeprogress');
+   });
+});
+$(document).ready(function() {
+    $('#Small').click(function(){
+    $('#Large').removeClass('active-size');
+    $('#Medium').removeClass('active-size');
+    $('#XXL').removeClass('active-size');
+    $('#textchange').addClass('smallSize');
+    $('#textchange').removeClass('xxlSize');
+    $('#textchange').removeClass('mediumSize');
+    $('#textchange').removeClass('largeSize');
+    $('ul.sizes .wrapper .progress').removeClass('xxlprogress');
+    $('ul.sizes .wrapper .progress').removeClass('largeprogress');
+    $('ul.sizes .wrapper .progress').removeClass('mediumprogress');
+   });
+});
+
+
+
+$(document).ready(function() {
+    $('ul.aligment li.button-align#center').click(function(){
+    $('ul.aligment li.button-align#center').addClass('active-align');
+    $('#textchange').addClass('centerAligment');
+    $('#textchange').removeClass('leftAligment');
+    $('#textchange').removeClass('rightAligment');
+    $('ul.aligment li.button-align#right').removeClass('active-align');
+    $('ul.aligment li.button-align#left').removeClass('active-align');
+   });
+});
+$(document).ready(function() {
+    $('ul.aligment li.button-align#left').click(function(){
+    $('ul.aligment li.button-align#left').addClass('active-align');
+    $('#textchange').addClass('leftAligment');
+    $('#textchange').removeClass('centerAligment');
+    $('#textchange').removeClass('rightAligment');
+    $('ul.aligment li.button-align#right').removeClass('active-align');
+    $('ul.aligment li.button-align#center').removeClass('active-align');
+   });
+});
+$(document).ready(function() {
+    $('ul.aligment li.button-align#right').click(function(){
+    $('ul.aligment li.button-align#right').addClass('active-align');
+    $('#textchange').addClass('rightAligment');
+    $('#textchange').removeClass('leftAligment');
+    $('#textchange').removeClass('centerAligment');
+    $('ul.aligment li.button-align#left').removeClass('active-align');
+    $('ul.aligment li.button-align#center').removeClass('active-align');
+   });
+});
+
+
+$(document).ready(function() {
+    $('div.background_button').click(function(){
+    $('div.background_button .color_background').toggleClass('dark');
+    $('#container-preview').toggleClass('darkBackground');
+    $('#container-preview #textchange').toggleClass('whiteText');
+   });
 });

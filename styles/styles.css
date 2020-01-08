@@ -2,7 +2,21 @@
 
 /* custom styles for the typeahead */
 
+.typeahead, .tt-query, .tt-hint {
+    background-color: transparent ;
+    display: block ;
+    border: none ;
+    outline: none ;
+    font-size: 22px ;
+    color: #414933 ;
+    right: 0px;
+    border-radius:5px ;
+    padding-left: 20px ;
+    position: absolute ;
+    height: 67px ;
+    width: 519px;
 
+}
 
 .typeahead {
     background-color: #fff;
